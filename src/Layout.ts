@@ -338,36 +338,54 @@ export class Layout extends Container
     /** Returns with of the layouts content. */
     get contentWidth(): number | undefined
     {
+        if (!this.layout) {
+            return 0;
+        }
         return this.layout.contentWidth;
     }
 
     /** Returns height of the layouts content. */
     get contentHeight(): number | undefined
     {
+        if (!this.layout) {
+            return 0;
+        }
         return this.layout.contentHeight;
     }
 
     /** Set the width of layout.  */
     override set width(value: number)
     {
+        if (!this.layout) {
+            return;
+        }
         this.layout.width = value;
     }
 
     /** Get the width of layout. */
     override get width()
     {
+        if (!this.layout) {
+            return 0;
+        }
         return this.layout.width;
     }
 
     /** Set the height of layout. */
     override set height(value: number)
     {
+        if (!this.layout) {
+            return;
+        }
         this.layout.height = value;
     }
 
     /** Get the height of layout. */
     override get height()
     {
+        if (!this.layout) {
+            return 0;
+        }
         return this.layout.height;
     }
 
